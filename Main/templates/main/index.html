@@ -388,7 +388,7 @@
 						</div>
 						<p>
 							<div class="quote">&ldquo;</div>
-						&ldquo;{{ item.comment }}&rdquo;</p>
+						&ldquo;{{ item.comment|truncatechars:50 }}&rdquo;</p>
 					</blockquote>
 				</div>
 				{% endfor %}
