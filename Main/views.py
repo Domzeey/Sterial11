@@ -1,13 +1,15 @@
 from django.shortcuts import render, redirect
-from .models import Team, Testimonial
+from .models import Team, Testimonial, Destination
 
 
 # Create your views here.
 
 def home_page(request):
     testimonial = Testimonial.objects.all()
+    destination = Destination.objects.all()
     context = {
-        "testimonial" : testimonial
+        "testimonial" : testimonial,
+        "destination" : destination
     }
     return render(request, "Main/index.html", context)
 
