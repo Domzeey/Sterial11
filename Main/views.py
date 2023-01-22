@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Team, Testimonial, Destination
+from .models import Team, Testimonial, Destination, Recent_post
 
 
 # Create your views here.
@@ -7,9 +7,11 @@ from .models import Team, Testimonial, Destination
 def home_page(request):
     testimonial = Testimonial.objects.all()
     destination = Destination.objects.all()
+    recentpost = Recent_post.objects.all()
     context = {
         "testimonial" : testimonial,
-        "destination" : destination
+        "destination" : destination,
+        "recentpost" : recentpost
     }
     return render(request, "Main/index.html", context)
 
@@ -31,3 +33,6 @@ def contact(request):
 
 def single(request):
     return render(request, "Main/single.html")
+
+def single_destination(request):
+    return render(request, "Main/single_destination.html")

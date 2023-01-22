@@ -27,13 +27,21 @@ class Destination(models.Model):
     title = models.CharField(max_length=150)
     price = models.DecimalField(decimal_places=2, max_digits=6)
     description = models.TextField()
-    image = models.ImageField(upload_to="Destination_pictures")
+    image = models.ImageField(default="default.jpg", upload_to="Destination_pictures")
 
 
     def __str__(self):
         return self.title
 
 
+class Recent_post(models.Model):
+    title = models.CharField(max_length=150)
+    description = models.TextField()
+    date = models.DateField()
+    image = models.ImageField(default="default.jpg", upload_to="Resentpost_pictures")
+
+    def __str__(self):
+        return self.title
 
 
 
